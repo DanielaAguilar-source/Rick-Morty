@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import imgRickMorty from './img/rick-morty.png'
 import Characteres from './components/Characteres';
@@ -16,9 +16,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    reqApi();
-  }, []);
 
   return (
     <div className="App">
