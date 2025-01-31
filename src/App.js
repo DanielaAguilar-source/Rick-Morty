@@ -1,16 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import imgRickMorty from './img/rick-morty.png'
 import Characteres from './components/Characteres';
+import axios from 'axios';
 
 
 function App() {
   const [characteres, setCharacteres] = useState(null);
-  const reqApi = async ()=>{
-    const api = await fetch('https://rickandmortyapi.com/api/character')
-    const characterApi = await api.json();
-    setCharacteres(characterApi.results);
-  }
+  const reqApi = async () => {
+    try {
+      const response = await axios.get('https://rickandmortyapi.com/api/character');
+      setCharacteres(response.data.results);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  useEffect(() => {
+    reqApi();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
