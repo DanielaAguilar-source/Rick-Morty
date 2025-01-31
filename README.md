@@ -5,7 +5,7 @@ Este es un proyecto desarrollado con React.js que consume la API de Rick and Mor
 
 🚀 Tecnologías utilizadas
 React.js ⚛️
-Fetch API 🔄
+Axios 🔄
 CSS 🎨
 React Hooks (useState) 🔧
 📌 Funcionalidades
